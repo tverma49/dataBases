@@ -49,11 +49,11 @@ SELECT count(id) from details where gender='M';
 
 #9
 
-SELECT avg(age) from details where gender='F';
+SELECT round(avg(age),0) from details where gender='F';
 
 #10
 
-SELECT avg(age) from details where gender='M';
+SELECT round(avg(age),0) from details where gender='M';
 
 #11
 
