@@ -1,0 +1,84 @@
+#1
+
+SELECT * FROM details where age not between 40 and 50;
+
+#or
+SELECT * FROM details where age < 40 or age > 50;
+
+#2
+
+SELECT * FROM details where hours between 10 and 15;
+
+#3
+
+SELECT * FROM details where firstname like '%e%';
+
+#4
+
+SELECT * FROM details where firstname like '_u%';
+
+#5
+
+SELECT * FROM details where firstname like '___n';
+
+#or
+
+SELECT * FROM details where firstname like '%n' and length(firstname) = 4;
+
+SELECT * FROM details where firstname like 'j___';
+
+SELECT * FROM details where firstname like '___';
+
+#or
+
+SELECT * FROM details where length(firstname)=3;
+
+SELECT * FROM details where firstname like '_____%';
+
+#6
+
+SELECT * FROM details where gender like 'F' and age like '%3%';
+
+#7
+
+SELECT count(id) from details where gender='F';
+
+#8
+
+SELECT count(id) from details where gender='M';
+
+#9
+
+SELECT avg(age) from details where gender='F';
+
+#10
+
+SELECT avg(age) from details where gender='M';
+
+#11
+
+SELECT * FROM details where age = (select max(age) from details);
+
+#12
+
+SELECT * FROM details where age = (select min(age) from details);
+
+#13
+
+SELECT avg(hours) from details;
+
+#14
+
+SELECT sum(rate*hours) as sum from details where gender='F';
+
+#15
+
+SELECT sum(rate*hours) as sum from details where gender='M';
+
+#16
+
+SELECT avg(age), department from details group by department;
+
+#17
+
+SELECT avg(age), position from details group by position;
